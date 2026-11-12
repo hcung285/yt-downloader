@@ -48,9 +48,11 @@ def test_auth_hint():
 
 def test_output_template(tmp_path: Path):
     single = Item(id="x", url="u")
-    assert output_template(tmp_path, single) == str(tmp_path / "%(title)s [%(id)s].%(ext)s")
+    tpl = "%(title)s [%(id)s].%(ext)s"
+    assert output_template(tmp_path, single, tpl) == str(tmp_path / tpl)
+    assert output_template(tmp_path, single, "%(id)s.%(ext)s") == str(tmp_path / "%(id)s.%(ext)s")
     pl = Item(id="x", url="u", playlist="My 50% mix: a/b", index=3, total=120)
-    t = output_template(tmp_path, pl)
+    t = output_template(tmp_path, pl, tpl)
     assert "%%" in t and "/" not in Path(t).parent.name and "003 - " in t
 
 
