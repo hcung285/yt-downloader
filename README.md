@@ -11,7 +11,7 @@ See [PLAN.md](PLAN.md) for the roadmap.
 Requires Python 3.10+. ffmpeg is needed to merge video+audio; if none is on PATH, a bundled copy (imageio-ffmpeg) is used. A JavaScript runtime (deno, node or bun) is auto-detected for YouTube extraction.
 
 ```bash
-pipx install git+ssh://git@github.com-hcung285/hcung285/yt-downloader.git   # or: pip install -e .
+pipx install git+ssh://git@github.com/hcung285/yt-downloader.git   # or: pip install -e .
 # ffmpeg:  winget install ffmpeg | brew install ffmpeg | sudo apt install ffmpeg
 ```
 
